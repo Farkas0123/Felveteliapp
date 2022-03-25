@@ -1,10 +1,10 @@
 from django.db import models
 
 class Diak(models.Model):
-    azonosito = models.IntegerField(max_length = 11)
+    azonosito = models.IntegerField()
     nev = models.CharField(max_length = 256)
     szak = models.CharField(max_length = 256)
-    pont = models.IntegerField(max_length=3)
+    pont = models.IntegerField()
     megfelelt = models.BooleanField(default=False)
 
     class Meta:

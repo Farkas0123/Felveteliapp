@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from APP.views import index
+from APP.views import megfelelt
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bekeres/', index)
+    path('', index),
+    path('megfelelt/', megfelelt),
 ]

@@ -13,17 +13,14 @@
     <title>Felvételi</title>
 </head>
 <body>
-    <form method="POST">
-        {% csrf_token %}
-        <input type="text" name="azonosito">
-        <button type="submit">Küld</button>
-    </form>
     <ul> 
         <li>{diak.azonosito}</li>
         <li>{diak.nev}</li>
         <li>{diak.szak}</li>
         <li>{diak.pont}</li>
         <li>{diak.megfelelt}</li>
+        
     </ul>
+
 </body>
 </html>
