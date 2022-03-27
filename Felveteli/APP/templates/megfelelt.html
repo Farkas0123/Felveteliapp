@@ -10,16 +10,15 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/script.js' %}"></script>
 
-    <title>Felvételi</title>
+    <title>Döntés</title>
 </head>
 <body>
     <ul> 
-        <li>{diak.azonosito}</li>
-        <li>{diak.nev}</li>
-        <li>{diak.szak}</li>
-        <li>{diak.pont}</li>
-        <li>{diak.megfelelt}</li>
-        
+        <li>{{diak.azonosito}}</li>
+        <li>{{diak.nev}}</li>
+        <li>{{diak.szak}}</li>
+        <li>{{diak.pont}}</li>
+        <li>{{diak.megfelelt}}</li>
     </ul>
 
 </body>

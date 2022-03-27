@@ -7,23 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %} ">
     <script src="{% static 'js/script.js' %}"></script>
 
     <title>Felvételi</title>
 </head>
 <body>
+    <h1 id="cim">Üdvözöljük!</h1>
+    <div>Ez a Szent László Gimnázium felvételi ellenőrző oldala. Itt tudhatja meg, hogy melyik szakra vették vel vagy.</div>
+    <div>Ebbe a dobozba írja be a diákigazolványa számát:</div>
     <form method="POST">
         {% csrf_token %}
         <input type="text" name="azonosito">
-        <button type="submit">Küld</button>
+        <button type="submit">Ellenőrizd</button>
     </form>
-    <ul> 
-        <li>{diak.azonosito}</li>
-        <li>{diak.nev}</li>
-        <li>{diak.szak}</li>
-        <li>{diak.pont}</li>
-        <li>{diak.megfelelt}</li>
-    </ul>
 </body>
 </html>
