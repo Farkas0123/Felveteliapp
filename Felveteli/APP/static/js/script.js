@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", main);
+// document.addEventListener("DOMContentLoaded", main);
 
-function main(){
-    alert('mükszik')
-}
+// function main(){
+//     alert('mükszik')
+// }
