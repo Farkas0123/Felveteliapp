@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+    <title>Feltöltés</title>
+</head>
+<body>
+    <div id="feltolto">
+        <form method="POST" id="form">
+            {% csrf_token %}
+            <div>
+                A titkos belépési jelszó:
+                <input type="password" name="jelszo" id="">
+            </div>
+                Ide írja az adatokat ','-vel elválasztva:
+            <div>
+                <textarea name="adatok" id="" cols="50" rows="10" placeholder="12345678912,Példa János,informatika,93,Igen"></textarea>
+            </div>
+            <button type="submit">Feltölt</button>
+        </form>
+    </div>
+</body>
+</html>

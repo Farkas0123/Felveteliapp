@@ -20,3 +20,8 @@ def index(request):
             return render(request, hanincs)
         
     return render(request, template)
+
+def feltoltes(request):
+    template = "admin.html"
+    context = {}
+    return render(request, template, context)
