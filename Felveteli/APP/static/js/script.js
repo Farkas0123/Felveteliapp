@@ -1,5 +1,5 @@
-// document.addEventListener("DOMContentLoaded", main);
+document.addEventListener("DOMContentLoaded", feltoltve);
 
-// function main(){
-//     alert('mükszik')
-// }
+function feltoltve(){
+    alert('Az adatok fel lettek töltve az adatbázisba!')
+}
