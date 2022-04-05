@@ -8,19 +8,16 @@ def index(request):
     template = "index.html"
     if request.method=="POST":
         sito = request.POST['azonosito']
-        print(sito)
-        
         template = "megfelelt.html"
         hanincs = "nincs.html"
-        alany = Diak.objects.filter(azonosito = sito).first()
-
-        if alany != None:
-            context={'diak': alany}
+        alanyok = Diak.objects.filter(azonosito = sito)
+        if alanyok.first() != None:
+            context={'diakok': alanyok}
             return render(request, template, context)
         else:
-            return render(request, hanincs)
+            return render(request, hanincs, {})
         
-    return render(request, template)
+    return render(request, template, {})
 
 def feltoltes(request):
     template = "upload.html"
@@ -28,13 +25,13 @@ def feltoltes(request):
         tabla = request.POST['adatok'].split("\t")
         for diak in tabla:
             akt = diak.split(",")
-            if Diak.objects.filter(azonosito=akt[0]).first() == None:
+            print(Diak.objects.filter(azonosito=akt[0]).first().azonosito == akt[0])
+            print(Diak.objects.filter(azonosito=akt[0]).first().szak != akt[2])
+            d = Diak.objects.filter(azonosito=akt[0]).first()
+            if d == None:
                 Diak.objects.create(azonosito=akt[0],nev=akt[1],szak=akt[2],pont=akt[3],megfelelt=akt[4],)
-                alert('Feltöltve')
-                
-
-            
-
-
+            elif Diak.objects.filter(azonosito=akt[0]).first().szak != akt[2]:
+                print(f'bent vok {d}')
+                Diak.objects.create(azonosito=akt[0],nev=akt[1],szak=akt[2],pont=akt[3],megfelelt=akt[4],)
     context = {}
     return render(request, template, context)

@@ -14,13 +14,17 @@
 </head>
 <body>
     <div id="adatok">
-        <ul> 
-            <li>{{diak.azonosito}}</li>
-            <li>{{diak.nev}}</li>
-            <li>{{diak.szak}}</li>
-            <li>{{diak.pont}}</li>
-            <li>{{diak.megfelelt}}</li>
-        </ul>
+        
+        {% for diak in diakok %}
+            <ul> 
+                <li>{{diak.azonosito}}</li>
+                <li>{{diak.nev}}</li>
+                <li>{{diak.szak}}</li>
+                <li>{{diak.pont}}</li>
+                <li>{{diak.megfelelt}}</li>
+            </ul>
+        {% endfor %}
+        
     </div>
 </body>
 </html>
