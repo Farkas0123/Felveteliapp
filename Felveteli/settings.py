@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-z0i$=h#l!h6igf!ktrc)d#rxx(mzztsgo^mieu$l1t&19sl68(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://felveteli-app.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
