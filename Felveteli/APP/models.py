@@ -6,6 +6,7 @@ class Diak(models.Model):
     szak = models.CharField(max_length = 256)
     pont = models.IntegerField()
     megfelelt = models.BooleanField(default=False)
+    megfeleltt = models.CharField(max_length = 256, null=True)
 
     class Meta:
         verbose_name = 'Diák'

@@ -9,20 +9,15 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/script.js' %}"></script>
-
+    
     <title>Döntés</title>
 </head>
 <body>
     <div id="adatok">
-        
+        <h1>{{diakok.first.nev}}</h1>
         {% for diak in diakok %}
-            <ul> 
-                <li>{{diak.azonosito}}</li>
-                <li>{{diak.nev}}</li>
-                <li>{{diak.szak}}</li>
-                <li>{{diak.pont}}</li>
-                <li>{{diak.megfelelt}}</li>
-            </ul>
+            <div>A(z) {{diak.szak}} szakon {{diak.pont}} pontot ért el. {{diak.megfeleltt}} </div>
+            <div></div>
         {% endfor %}
         
     </div>

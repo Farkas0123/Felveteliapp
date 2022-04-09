@@ -11,6 +11,11 @@ def index(request):
         template = "megfelelt.html"
         hanincs = "nincs.html"
         alanyok = Diak.objects.filter(azonosito = sito)
+        for alany in alanyok:
+            if alany.megfelelt == True:
+                alany.megfeleltt = "Gratulálunk, felvételt nyert az iskolánkba!"
+            else: 
+                alany.megfeleltt = "Sajnáljuk nem nyert felvételt!"
         if alanyok.first() != None:
             context={'diakok': alanyok}
             return render(request, template, context)
@@ -25,13 +30,10 @@ def feltoltes(request):
         tabla = request.POST['adatok'].split("\t")
         for diak in tabla:
             akt = diak.split(",")
-            print(Diak.objects.filter(azonosito=akt[0]).first().azonosito == akt[0])
-            print(Diak.objects.filter(azonosito=akt[0]).first().szak != akt[2])
             d = Diak.objects.filter(azonosito=akt[0]).first()
             if d == None:
                 Diak.objects.create(azonosito=akt[0],nev=akt[1],szak=akt[2],pont=akt[3],megfelelt=akt[4],)
             elif Diak.objects.filter(azonosito=akt[0]).first().szak != akt[2]:
-                print(f'bent vok {d}')
                 Diak.objects.create(azonosito=akt[0],nev=akt[1],szak=akt[2],pont=akt[3],megfelelt=akt[4],)
-    context = {}
-    return render(request, template, context)
+                
+    return render(request, template, {})
