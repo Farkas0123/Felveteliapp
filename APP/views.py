@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from posixpath import split
 from re import template
 from tkinter import Variable
