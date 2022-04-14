@@ -1,6 +1,5 @@
 from posixpath import split
 from re import template
-from tkinter import Variable
 from django.shortcuts import render
 from .models import Diak
 
