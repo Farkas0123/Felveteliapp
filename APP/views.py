@@ -32,6 +32,8 @@ def feltoltes(request):
         i = 0
         for diak in tabla:
             akt = diak.split(",")
+            print(akt[0] is not int or akt[1] is not str or akt[2] is not str or akt[3] is not int or akt[4] is not bool and not akt[0] == "")
+            print(type(akt[0]))
             if akt[0] is not int or akt[1] is not str or akt[2] is not str or akt[3] is not int or akt[4] is not bool and not akt[0] == "":
                 return render(request, template, {'hiba': f"Valamelyik adat hibás a(z) {i+1} sorban"})
             else:
