@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z0i$=h#l!h6igf!ktrc)d#rxx(mzztsgo^mieu$l1t&19sl68('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['felveteli-app.herokuapp.com','127.0.0.1']
 
