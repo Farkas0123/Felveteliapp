@@ -1,1 +1,1 @@
-web: gunicorn PROJEKT.wsgi --log-file -
+web: gunicorn Felveteli.wsgi --log-file -

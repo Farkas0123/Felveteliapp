@@ -1,7 +1,5 @@
-from asyncio.windows_events import NULL
 from posixpath import split
 from re import template
-from tkinter import Variable
 from django.shortcuts import render
 from .models import Diak
 
@@ -42,7 +40,7 @@ def feltoltes(request):
                     Diak.objects.create(azonosito=akt[0],nev=akt[1],szak=akt[2],pont=akt[3],megfelelt=akt[4],)
                 elif Diak.objects.filter(azonosito=akt[0]).first().szak != akt[2]:
                     Diak.objects.create(azonosito=akt[0],nev=akt[1],szak=akt[2],pont=akt[3],megfelelt=akt[4],)
-                i =+ 1
+                i =+ 1    
         return render(request, template, {})
                 
     return render(request, template, {})

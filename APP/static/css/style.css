@@ -4,6 +4,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     /* background-color: aliceblue; */
     list-style: none;
+    text-decoration: none;
 }
 
 #container, #feltolto, #adatok, #hibas{
