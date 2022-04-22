@@ -30,9 +30,6 @@ def feltoltes(request):
         i = 0
         for diak in tabla:
             akt = diak.split(",")
-
-            print(akt[0] is not int or akt[1] is not str or akt[2] is not str or akt[3] is not int or akt[4] is not bool and not akt[0] == "")
-            print(type(akt[0]))
             try:
                 a = int(akt[0])
                 b = str(akt[1])
