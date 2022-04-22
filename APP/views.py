@@ -47,5 +47,8 @@ def feltoltes(request):
             elif Diak.objects.filter(azonosito=akt[0], szak=akt[2]) == None:
                 Diak.objects.create(azonosito=akt[0],nev=akt[1],szak=akt[2],pont=akt[3],megfelelt=akt[4],)
         return render(request, template, {})
-    else:
+    elif request.method =="POST" and request.POST['jelszo']!="jelszo":
         return render(request, template, {'hiba': "Hibás jelszó"})
+    else:
+        return render(request, template, {})
+        
