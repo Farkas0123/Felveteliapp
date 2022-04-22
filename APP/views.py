@@ -32,15 +32,19 @@ def feltoltes(request):
             akt = diak.split(",")
             print(akt[0] is not int or akt[1] is not str or akt[2] is not str or akt[3] is not int or akt[4] is not bool and not akt[0] == "")
             print(type(akt[0]))
-            if akt[0] is not int or akt[1] is not str or akt[2] is not str or akt[3] is not int or akt[4] is not bool and not akt[0] == "":
-                return render(request, template, {'hiba': f"Valamelyik adat hibás a(z) {i+1} sorban"})
-            else:
-                d = Diak.objects.filter(azonosito=akt[0]).first()
-                if d == None:
-                    Diak.objects.create(azonosito=akt[0],nev=akt[1],szak=akt[2],pont=akt[3],megfelelt=akt[4],)
-                elif Diak.objects.filter(azonosito=akt[0]).first().szak != akt[2]:
-                    Diak.objects.create(azonosito=akt[0],nev=akt[1],szak=akt[2],pont=akt[3],megfelelt=akt[4],)
-                i =+ 1    
+            try:
+                a = int(akt[0])
+                b = str(akt[1])
+                c = str(akt[2])
+                d = int(akt[3])
+                e = bool(akt[4])
+            except:
+                return render(request, template, {'hiba': "Valamelyik adat hibás"})
+
+            if Diak.objects.filter(azonosito=akt[0]).first() == None:
+                Diak.objects.create(azonosito=akt[0],nev=akt[1],szak=akt[2],pont=akt[3],megfelelt=akt[4],)
+            elif Diak.objects.filter(azonosito=akt[0], szak=akt[2]) == None:
+                Diak.objects.create(azonosito=akt[0],nev=akt[1],szak=akt[2],pont=akt[3],megfelelt=akt[4],)
         return render(request, template, {})
-                
-    return render(request, template, {})
+    else:
+        return render(request, template, {'hiba': "Hibás jelszó"})
